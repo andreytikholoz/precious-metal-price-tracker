@@ -104,6 +104,7 @@ public class ExcelConfig {
             LocalDateTime currentDateTime = LocalDateTime.now();
             String currentDateAndTime = currentDateTime.format(formatter);
             cell.setCellValue(currentDateAndTime);
+            wb.setForceFormulaRecalculation(true);
 
             try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
                 wb.write(outputStream);
